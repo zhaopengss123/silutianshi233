@@ -1,0 +1,35 @@
+<view class='content'>
+  <view class='banner'>
+      <!-- <image src='/assets/images/indexBanner_02.jpg' mode="widthFix"></image> -->
+        <swiper indicator-dots="true" autoplay="true" interval="5000" duration="300"  indicator-active-color="#FFF" circular="true">
+        <block wx:for="{{swiperArray}}" wx:key="key">
+          <swiper-item>
+            <image src="{{item.banner}}" class="slide-image" style='width:750rpx' mode="widthFix"/>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class='push'>
+      {{ actives.des }}
+  </view>
+  <view class='detail_main'>
+  <!-- 列表 -->
+    <view class='list' wx:for="{{ videoList }}" wx:key="key">
+        <navigator url='./videoPlay/videoPlay?id={{ item.id }}'>
+        <image src='{{ item.pic }}'></image>
+        <view class='list_font'>
+            <view> <text>姓名：{{ item.name }}</text> <text>类目：书画</text> </view>
+            <view class='pf'> <text>现场：{{ item.livenum? item.livenum:0 }}</text><text>网络：{{item.linenum?item.linenum:0}}</text><text>总分：{{ item.allnum?item.allnum:0 }}</text> </view>
+        </view>
+        </navigator>
+    </view> 
+  <!--列表图片 -->
+  <!-- <view class='imgh'>
+    <image src='/assets/images/list_banner.png'></image>
+  </view>   -->
+            
+
+  </view>
+  
+</view>
+<view class='list_footer'>我是有底线的~</view>
